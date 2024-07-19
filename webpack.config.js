@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-    entry: './app/main.ts', // point to start building bundle
-    devtool: 'inline-source-map', // create source map inline with final bundle
-    mode: 'development', // how to use its built-in optimizations (development/production/none)
-    module: { // configure ts‑loader to run TypeScript compiler
+    entry: './app/main.ts',
+    devtool: 'inline-source-map',
+    mode: 'development',
+    module: {
       rules: [
         {
           test: /\.tsx?$/,
@@ -13,13 +13,13 @@ module.exports = {
         }
       ]
     },
-    resolve: { // files to use for module resolution
+    resolve: {
       extensions: [ '.tsx', '.ts', '.js' ]
     }, 
-    output: { // final compiled output file
+    output: {
         filename: 'bundle.js'
     },
-    devServer: { // development server that provides live reloading
+    devServer: {
         static: {
             directory: path.resolve( __dirname, '' )
         }
